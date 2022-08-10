@@ -1,0 +1,13 @@
+import pandas as pd
+melb_data = pd.read_csv('project 2\data\melb_data.csv', sep=',')
+melb_data['Car'] = melb_data['Car'].astype('int64')
+melb_data['Bedroom'] = melb_data['Bedroom'].astype('int64')
+melb_data['Bathroom'] = melb_data['Bathroom'].astype('int64')
+melb_data['Propertycount'] = melb_data['Propertycount'].astype('int64')
+melb_data['YearBuilt'] = melb_data['YearBuilt'].astype('int64')
+print(melb_data['Propertycount'].max())
+print(round(melb_data['Distance'].std()))
+landsize_median = melb_data['BuildingArea'].median() 
+landsize_mean =  melb_data['BuildingArea'].mean()
+print(abs(landsize_median - landsize_mean)/landsize_mean)
+print(melb_data['Bedroom'].mode())

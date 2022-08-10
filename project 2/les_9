@@ -1,0 +1,15 @@
+from operator import index
+import pandas as pd
+students_performance = pd.read_csv('project 2\data\students_performance.csv', sep=',')
+#print(students_performance.info())
+#print(students_performance.loc[155])
+#print(students_performance['math score'].mean())
+#print(students_performance['race/ethnicity'].mode())
+#print(students_performance[students_performance['test preparation course'] == 'completed'].mean())
+#print(students_performance[students_performance['math score'] == 0].shape[0])
+#print(students_performance[students_performance['lunch'] == 'standard']['math score'].mean())
+#print(students_performance[students_performance['lunch'] == 'free/reduced']['math score'].mean())
+#print(students_performance["parental level of education"].value_counts(normalize=True))
+a = students_performance[students_performance['race/ethnicity'] == 'group A']['writing score'].median()
+b = students_performance[students_performance['race/ethnicity'] == 'group C']['writing score'].mean()
+print(round(abs(a - b)))
